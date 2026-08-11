@@ -21,7 +21,7 @@ export default function WhyZynocraftx() {
           className="mb-16 max-w-2xl"
         >
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
-            Why Zynocraftx
+            Why Zynocraftx Technology
           </span>
           <h2 className="section-title mt-4 text-4xl md:text-5xl text-gradient">
             Engineering With Purpose.

@@ -4,8 +4,8 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const faqs = [
   {
-    q: 'What does Zynocraftx specialize in?',
-    a: 'Zynocraftx specializes in software engineering, digital product development, AI systems, automation, mobile applications, and custom software platforms.',
+    q: 'What does Zynocraftx Technology specialize in?',
+    a: 'Zynocraftx Technology specializes in software engineering, digital product development, AI systems, automation, mobile applications, and custom software platforms.',
   },
   {
     q: 'Can you develop software around our workflow?',

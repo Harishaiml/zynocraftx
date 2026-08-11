@@ -13,13 +13,13 @@ export default function About() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
-              About Zynocraftx
+              About Zynocraftx Technology
             </span>
             <h2 className="section-title mt-4 text-4xl md:text-5xl text-gradient">
               Technology Aligned With Your Ambition.
             </h2>
             <p className="mt-6 max-w-lg text-white/50 leading-relaxed">
-              Zynocraftx combines software engineering, product thinking, and
+              Zynocraftx Technology combines software engineering, product thinking, and
               applied AI to create technology that fits the way organizations
               actually operate.
             </p>
@@ -27,7 +27,7 @@ export default function About() {
               href="#contact"
               className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-white transition-colors"
             >
-              Meet Zynocraftx
+              Meet Zynocraftx Technology
               <span className="h-px w-6 bg-accent transition-all duration-300 group-hover:w-10" />
             </a>
           </motion.div>

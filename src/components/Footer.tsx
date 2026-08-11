@@ -1,5 +1,3 @@
-import { Hexagon } from 'lucide-react';
-
 const navLinks = [
   { label: 'Capabilities', href: '#capabilities' },
   { label: 'Work', href: '#work' },
@@ -17,12 +15,13 @@ export default function Footer() {
           {/* brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <div className="relative flex h-9 w-9 items-center justify-center">
-                <Hexagon className="h-9 w-9 text-accent" strokeWidth={1} />
-                <span className="brand-logo absolute text-sm font-bold text-white">Z</span>
-              </div>
+              <img
+                src="/assets/images/ChatGPT_Image_Aug_10,_2026,_02_27_52_PM.png"
+                alt="Zynocraftx Technology logo"
+                className="h-9 w-9 shrink-0 object-contain"
+              />
               <span className="brand-logo text-lg font-semibold tracking-tight">
-                Zyno<span className="text-accent-gradient">CraftX</span>
+                Zynocraftx Technology
               </span>
             </div>
             <p className="mt-5 max-w-xs text-sm text-white/40">
@@ -54,7 +53,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/8 pt-8">
           <p className="font-mono text-xs text-white/30">
-            © 2026 Zynocraftx. All rights reserved.
+            © 2026 Zynocraftx Technology. All rights reserved.
           </p>
         </div>
       </div>
