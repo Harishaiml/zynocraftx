@@ -1,0 +1,203 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-base: #050505;
+  --color-surface: #0a0a0a;
+  --color-accent: #2563eb;
+  --color-purple: #7c3aed;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  --font-display: 'Snap ITC', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@font-face {
+  font-family: 'Snap ITC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Snap ITC'), local('SnapITC'), local('Snap ITC Regular'),
+    local('SnapITC-Regular');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v18/tD4x0oCN0SK8w9jVKn3aP5g7W0O-L5oK7qM.woff2') format('woff2');
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: #050505;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: #fff;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  cursor: none;
+  min-width: 0;
+}
+
+@media (hover: none), (pointer: coarse) {
+  body { cursor: auto; }
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(37, 99, 235, 0.5); }
+
+.glass {
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, rgba(255, 255, 255, 0.55) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-accent-gradient {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid-fade {
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 75%);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.08); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+.will-change-transform { will-change: transform; }
+
+/* ---- Typography system ---- */
+/* Display font (Snap ITC) — headings and branding only */
+.font-display {
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.brand-logo {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+/* Hero heading — controlled fluid typography (reduced ~12% from previous pass) */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.2vw, 2.85rem);
+  line-height: 1.0;
+  letter-spacing: 0.005em;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .hero-title { font-size: clamp(2.4rem, 4.4vw, 3.5rem); }
+}
+
+@media (min-width: 1024px) {
+  .hero-title { font-size: clamp(2.85rem, 3.9vw, 4.35rem); }
+}
+
+@media (min-width: 1440px) {
+  .hero-title { font-size: clamp(3.1rem, 3.5vw, 4.75rem); }
+}
+
+/* Section headings — controlled fluid typography */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .section-title { font-size: clamp(2.25rem, 3.5vw, 3.25rem); }
+}
+
+@media (min-width: 1024px) {
+  .section-title { font-size: clamp(2.5rem, 3vw, 4rem); }
+}
+
+.highlight-text {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* ---- Hide Bolt platform badge ---- */
+a[href*="bolt.new"],
+div[class*="bolt-badge"],
+.bolt-badge,
+.made-in-bolt,
+[data-bolt-badge] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* ---- Overflow safety ---- */
+section, main, header, footer {
+  min-width: 0;
+}
+
+img { max-width: 100%; }
