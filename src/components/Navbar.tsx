@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Hexagon, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const links = [
   { label: 'Capabilities', href: '#capabilities' },
@@ -36,22 +36,19 @@ export default function Navbar() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12 py-4">
           {/* logo */}
-          <a href="#" className="group flex items-center gap-2.5">
-            <motion.div
-              whileHover={{ rotate: 60, scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-              className="relative flex h-10 w-10 items-center justify-center"
-            >
-              <Hexagon className="h-10 w-10 text-accent" strokeWidth={1} />
-              <span className="brand-logo absolute text-[15px] font-bold text-white">Z</span>
-            </motion.div>
-            <span className="brand-logo text-[20px] font-semibold tracking-tight">
-              Zyno<span className="text-accent-gradient">CraftX</span>
+          <a href="#" className="flex min-w-0 shrink items-center gap-2.5">
+            <img
+              src="/assets/images/ChatGPT_Image_Aug_10,_2026,_02_27_52_PM.png"
+              alt="Zynocraftx Technology logo"
+              className="h-9 w-9 shrink-0 object-contain md:h-10 md:w-10"
+            />
+            <span className="brand-logo whitespace-nowrap text-[16px] font-semibold tracking-tight sm:text-[18px] lg:text-[20px]">
+              Zynocraftx Technology
             </span>
           </a>
 
           {/* desktop links */}
-          <div className="hidden items-center gap-7 md:flex">
+          <div className="hidden items-center gap-7 lg:flex">
             {links.map((l) => (
               <a
                 key={l.label}
@@ -71,7 +68,7 @@ export default function Navbar() {
           </div>
 
           {/* mobile right side */}
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex items-center gap-3 lg:hidden">
             <a
               href="#contact"
               className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[13px] font-medium text-white"
@@ -97,7 +94,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-16 left-0 right-0 z-40 glass mx-4 rounded-2xl p-6 md:hidden"
+            className="fixed top-16 left-0 right-0 z-40 glass mx-4 rounded-2xl p-6 lg:hidden"
           >
             <div className="flex flex-col gap-4">
               {links.map((l) => (
